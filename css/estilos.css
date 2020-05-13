@@ -1,3 +1,4 @@
+/* soft reset do css */
 * {
   margin: 0;
   padding: 0;
@@ -6,35 +7,45 @@
 
 body {
   background-image: url('../img/fundo.jpg');
-  background-size: auto 100vh;
+  background-size: auto 100vh; 
+  font-family: 'Source Code Pro', monospace;
   height: 100vh;
+  font-size: 12px;
 }
 
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
 @media (min-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* breakpoint */
+@media (min-width: 600px) {
   body {
     font-size: 18px;
   }
 }
 
-@media (min-width: 600px) {
+/* breakpoint */
+@media (min-width: 1200px) {
   body {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 header {
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
 .menu {
   background-color: white;
   position: fixed;
-  top: 0;
   width: 100vw;
+  top: 0;
 }
 
 .menu ul {
@@ -43,30 +54,80 @@ header {
 }
 
 .menu li {
-  list-style: none;
+ list-style: none; 
 }
 
 .menu a {
-  color: teal;
+  
   display: block;
-  padding: 10px;
+  padding: 10px 20px;
+}
+
+a {
+  color: teal;
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+.site-subtitle, 
 .site-title {
   color: whitesmoke;
   text-align: center;
 }
 
+.site-title {
+  font-size: 4em;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
 .site-subtitle {
-  color: silver;
-  font-style: italic;
-  font-weight: lighter;
-  text-align: center;
+ font-style: italic;
+ font-family: 'Press Start 2P', cursive;
+ line-height: 1.8em;
+}
+
+.portfolio {
+  padding: 2em;
+  height: 100vh;
+}
+
+.portfolio h2 {
+  font-family: 'Press Start 2P', cursive;
+  color: whitesmoke;
+  margin-bottom: 1.5em;
   font-size: 2em;
+}
+
+.portfolio .grid {
+  display: grid;
+  gap: 2em;
+}
+
+@media (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;
+  }
+}
+
+@media (min-width: 880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 8em - 48px);
+  }
+}
+
+.portfolio figure {
+  text-align: center;
 }
 
 .img-portfolio {
   height: 180px;
-  width: 180px;
+  width: 240px;
+  object-fit: cover;
+  object-position: left bottom;
 }
