@@ -7,21 +7,21 @@
 
 body {
   background-image: url('../img/fundo.jpg');
-  background-size: auto 100vh; 
+  background-size: auto 100vh;
   font-family: 'Source Code Pro', monospace;
   height: 100vh;
   font-size: 12px;
 }
 
 /* se a tela tiver pelo menos 400px vai carregar estes estilos */
-@media (min-width: 400px) {
+@media (min-width: 560px) {
   body {
     font-size: 14px;
   }
 }
 
 /* breakpoint */
-@media (min-width: 600px) {
+@media (min-width: 880px) {
   body {
     font-size: 18px;
   }
@@ -80,44 +80,54 @@ a:hover {
 
 .site-title {
   font-size: 4em;
-  font-family: 'Gloria Hallelujah', cursive;
+  padding: 0.5em;
+  /*font-family: 'Gloria Hallelujah', cursive;*/
 }
 
 .site-subtitle {
- font-style: italic;
+ /*font-style: italic;*/
  font-family: 'Press Start 2P', cursive;
- line-height: 1.8em;
 }
 
 .portfolio {
-  padding: 2em;
+  padding: 3em;
   height: 100vh;
 }
 
 .portfolio h2 {
-  font-family: 'Press Start 2P', cursive;
+  /*font-family: 'Press Start 2P', cursive;*/
   color: whitesmoke;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.2em;
   font-size: 2em;
+  text-align: center;
 }
 
 .portfolio .grid {
   display: grid;
-  gap: 2em;
+  gap: 3em;
+  font-size: 0.6em;
+  color: whitesmoke;
+  align-content: center;
+  justify-content: center;
 }
 
 @media (min-width: 560px) {
   .portfolio .grid {
-    grid-template-columns: 240px 240px;
+    grid-template-columns: 260px 260px;
   }
 }
 
 @media (min-width: 880px) {
   .portfolio .grid {
     grid-template-columns: repeat(3, 260px);
-    align-content: center;
-    justify-content: center;
-    height: calc(100vh - 8em - 48px);
+    /*height: calc(100vh - 8em - 48px);*/
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(4, 260px);
+    /*height: calc(100vh - 8em - 48px);*/
   }
 }
 
@@ -127,7 +137,14 @@ a:hover {
 
 .img-portfolio {
   height: 180px;
-  width: 240px;
+  width: 260px;
+  object-fit: fill;
+  object-position: center center;
+}
+
+.img-portfolio1 {
+  height: 180px;
+  width: 260px;
   object-fit: cover;
-  object-position: left bottom;
+  object-position: center center;
 }
